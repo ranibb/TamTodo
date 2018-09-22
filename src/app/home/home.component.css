@@ -47,45 +47,44 @@
     letter-spacing: 10px;
 }
 
-@media (max-width: 1049px) {
+@media (max-width: 1243px) {
     .show-case-container .show-case-content-2 .mat-display-4 {
-        font-size: 5rem;
+        font-size: 3.3rem;
+        line-height: 1;
 
     }
     .show-case-container .show-case-content-2 .mat-display-1 {
-        font-size: 1.8rem;
-        line-height: 2;
+        font-size: 1.0rem;
+    }
+}
+
+@media (max-width: 1049px) {
+    .show-case-container .show-case-content-2 .mat-display-4 {
+        font-size: 2.55rem;
+        letter-spacing: 5px;
+
+    }
+    .show-case-container .show-case-content-2 .mat-display-1 {
+        font-size: 0.7rem;
     }
 }
 
 @media (max-width: 959px) {
     .show-case-container .show-case-content-2 .mat-display-4 {
-        font-size: 5rem;
-    }
-}
-
-@media (max-width: 599px) {
-    .show-case-content-2 .show-case-content-header {
-        max-width: 485px;
-    }
-    .show-case-container .show-case-content-2 .mat-display-4 {
         font-size: 4rem;
     }
     .show-case-container .show-case-content-2 .mat-display-1 {
-        font-size: 1.5rem;
-        line-height: 2;
+        font-size: 1.05rem;
     }
 }
 
 @media (max-width: 399px) {
-    .show-case-content-2 .show-case-content-header {
-        max-width: 485px;
-    }
     .show-case-container .show-case-content-2 .mat-display-4 {
-        font-size: 3rem;
+        font-size: 3.3rem;
+        letter-spacing: 3px;
     }
     .show-case-container .show-case-content-2 .mat-display-1 {
-        font-size: 1.1rem;
-        line-height: 2;
+        font-size: 0.8rem;
+        line-height: 1.3;
     }
 }

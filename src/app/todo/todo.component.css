@@ -1,0 +1,13 @@
+.todo-container {
+    padding: 16px;
+}
+.taskType {
+    font-size: 13px;
+    background: #E0E0E0;
+    padding: 9px;
+    border-radius: 100px;
+}
+
+.completed {
+    text-decoration: line-through;
+}

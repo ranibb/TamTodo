@@ -65,13 +65,22 @@ $input:         mat-typography-level(inherit, 1.125, 400)
 @include angular-material-typography($tam-typography);
 @include mat-core($tam-typography);
 
+@mixin mat-toolbar-theme($tamdev) {
+  $background: map-get($tamdev, background);
+
+  .mat-toolbar {
+    background: mat-color($background, 'card');
+    color: mat-color($tamdev-primary, 500);
+  }
+}
+@include mat-toolbar-theme($tamdev);
 
 @mixin mat-sidenav-theme($tamdev) {
   .mat-drawer {
     background-color: mat-color($tamdev-primary);
   }
 }
-@include  mat-sidenav-theme($tamdev);
+@include mat-sidenav-theme($tamdev);
 
 @mixin mat-list-theme($tamdev) {
   $background: map-get($tamdev, background);
@@ -80,9 +89,12 @@ $input:         mat-typography-level(inherit, 1.125, 400)
   .mat-list, .mat-nav-list, .mat-selection-list {
     .mat-list-item {
       color: mat-color($tamdev-primary, 200);
+      span {
+        margin: 0 10px;
+      }
     }
     .mat-list-option {
-      color: mat-color($tamdev-primary, 200);
+      color: mat-color($tamdev-primary, 500);
     }
   }
   
