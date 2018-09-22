@@ -1,0 +1,91 @@
+.show-case-container {
+    background: url(/assets/images/spacex-549326-unsplash.jpg) no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: calc(100vh - 64px)
+}
+
+.book-now-button {
+    width: 170px;
+    color: white;
+    border:  1px solid white;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.show-case-content-1, .show-case-content-3 {
+    min-width:170px;
+    padding: 40px; 
+}
+
+.show-case-content-2 { 
+    text-align: center
+}
+
+.show-case-content-2 .show-case-content-header {
+    max-width: 540px;
+    padding: 20px;
+}
+
+.show-case-content-2 .mat-display-1 {
+    margin: 0 0 0 -10px;
+}
+
+.photo-credit {
+    color: rgba(255, 255, 255, 0.84);
+    background: rgba(39, 54, 72, 0.7);
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.photo-credit a {
+    color: #4A90E2;
+}
+
+.mat-display-4 {
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+@media (max-width: 1049px) {
+    .show-case-container .show-case-content-2 .mat-display-4 {
+        font-size: 5rem;
+
+    }
+    .show-case-container .show-case-content-2 .mat-display-1 {
+        font-size: 1.8rem;
+        line-height: 2;
+    }
+}
+
+@media (max-width: 959px) {
+    .show-case-container .show-case-content-2 .mat-display-4 {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 599px) {
+    .show-case-content-2 .show-case-content-header {
+        max-width: 485px;
+    }
+    .show-case-container .show-case-content-2 .mat-display-4 {
+        font-size: 4rem;
+    }
+    .show-case-container .show-case-content-2 .mat-display-1 {
+        font-size: 1.5rem;
+        line-height: 2;
+    }
+}
+
+@media (max-width: 399px) {
+    .show-case-content-2 .show-case-content-header {
+        max-width: 485px;
+    }
+    .show-case-container .show-case-content-2 .mat-display-4 {
+        font-size: 3rem;
+    }
+    .show-case-container .show-case-content-2 .mat-display-1 {
+        font-size: 1.1rem;
+        line-height: 2;
+    }
+}
