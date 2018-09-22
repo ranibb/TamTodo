@@ -10,3 +10,18 @@
   position: sticky;
   top: 0;
 }
+
+.mat-drawer:not(.mat-drawer-side) {
+  box-shadow: unset;
+}
+
+.sidenav-close-button {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin-right: -12px;
+}
+
+.sidenav-close-button mat-icon {
+  font-size: 14px;
+}

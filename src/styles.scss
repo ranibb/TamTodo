@@ -1,0 +1,83 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$tam-primary: (
+    50 : #FFFFFF, // toolbar bg | todo bg
+    100 : #F9F9F9, // main bg
+    200 : #EDF4FC, // sidenav text
+    300 : #DDDDDD, // input border
+    400 : #B5B5B5, // select text
+    500 : #666666, // todo text
+    600 : #30394A, // title text
+    700 : #4A90E2, // sidenav link active bg
+    800 : #273648, // sidenav bg
+    900 : #5d6875,
+    A100 : #62a1ff,
+    A200 : #2f82ff,
+    A400 : #0064fb,
+    A700 : #005ae1,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+// where numbers represents "default", "lighter", "darker" variations of the color.
+$tamdev-primary: mat-palette($tam-primary, 800, 800, 800);
+$tamdev-accent: mat-palette($tam-primary, 700, 700, 700);
+$tamdev-warn: mat-palette($mat-red);
+$tamdev: mat-light-theme($tamdev-primary, $tamdev-accent, $tamdev-warn);
+@include angular-material-theme($tamdev);
+
+// where numbers represents font-size, line-height, weight
+$tam-typography: mat-typography-config(
+  $font-family:   'Rubik, sans-serif',
+  $display-4:     mat-typography-level(97px, 1.19, 700),
+  $display-3:     mat-typography-level(56px, 56px, 400),
+  $display-2:     mat-typography-level(45px, 48px, 400),
+  $display-1:     mat-typography-level(25px, 1.19, 400),
+  $headline:      mat-typography-level(24px, 32px, 400),
+  $title:         mat-typography-level(20px, 32px, 500),
+  $subheading-2:  mat-typography-level(16px, 28px, 400),
+  $subheading-1:  mat-typography-level(15px, 24px, 400),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(14px, 20px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(14px, 14px, 500),
+  $input:         mat-typography-level(inherit, 1.125, 400)
+);
+
+@include mat-base-typography($tam-typography);
+@include mat-checkbox-typography($tam-typography);
+@include angular-material-typography($tam-typography);
+@include mat-core($tam-typography);
+
+@mixin main-nav-component($tamdev) {
+
+    // All theming for MainNavComponent goes here!
+    .sidenav {
+        background-color: mat-color($tamdev-primary);
+    }
+
+    .mat-sidenav-content {
+        .mat-toolbar {
+            background: mat-color($tamdev-primary, 50);
+        }
+    }
+};
+@include main-nav-component($tamdev)
+
+
