@@ -10,13 +10,19 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { TodoComponent } from './todo/todo.component';
+import { MemberComponent } from './member/member.component';
+import { PaymentAndBillingComponent } from './payment-and-billing/payment-and-billing.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
     HomeComponent,
-    TodoComponent
+    TodoComponent,
+    MemberComponent,
+    PaymentAndBillingComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

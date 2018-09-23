@@ -90,6 +90,7 @@ $input:         mat-typography-level(inherit, 1.125, 400)
     padding-top: 0 !important;
     .mat-list-item {
       color: mat-color($tamdev-primary, 200);
+      font-size: mat-font-size($tam-typography, subheading-1);
       span {
         margin: 0 10px;
       }

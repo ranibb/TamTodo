@@ -4,7 +4,7 @@ export const TODOS: Todo[] = [
   {completed: true, description: "Template design on Sketch | Figma | invison", type: "UI/UX", category: "design and development" },
   {completed: true, description: "Convert design into HTML + CSS template", type: "CSS", category: "design and development" },
   {completed: true, description: "Make the template resposnive", type: "CSS", category: "design and development" },
-  {completed: false, description: "Make the design compatible as a minimum with IE9", type: "Browsers", category: "design and development" },
+  {completed: true, description: "Make the design compatible as a minimum with IE9", type: "Browsers", category: "design and development" },
   {completed: true, description: "Use SASS to make colors easy to change (skin-capable / theme-capable )", type: "SASS", category: "design and development" },
   {completed: true, description: "Build on top of Angular and load data from a data source", type: "TypeScript", category: "design and development" },
   {completed: true, description: "Use Angular Material", type: "Angular", category: "design and development" },
