@@ -1,18 +1,49 @@
 <div fxLayout="column" fxLayoutAlign=" stretch" class="todo-container">
-  <div>
-    <h2 class="mat-h2">test</h2>
+  <div class="tasksCategory">
+    <h2 class="mat-h2">Design & Development</h2>
     <mat-card>
       <mat-selection-list>
-        <mat-list-option  
-        *ngFor="let todo of todos"
-        (click)="onSelect(todo)"
-        checkboxPosition="before"
-        [selected]="todo.completed">
-          <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div [class.completed]="todo.completed">{{todo.description}}</div>
-            <div class="taskType">{{todo.type}}</div>
-          </div>
-        </mat-list-option>
+        <div *ngFor="let todo of todos">
+          <mat-list-option *ngIf="todo.category == 'design and development'" (click)="onSelect(todo)" checkboxPosition="before"
+            [selected]="todo.completed">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <div [class.completed]="todo.completed">{{todo.description}}</div>
+              <div [class.taskType]="todo.type">{{todo.type}}</div>
+            </div>
+          </mat-list-option>
+        </div>
+      </mat-selection-list>
+    </mat-card>
+  </div>
+  <div class="tasksCategory">
+    <h2 class="mat-h2">Improvments</h2>
+    <mat-card>
+      <mat-selection-list>
+        <div *ngFor="let todo of todos">
+          <mat-list-option *ngIf="todo.category == 'improvment'" (click)="onSelect(todo)" checkboxPosition="before"
+            [selected]="todo.completed">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <div [class.completed]="todo.completed">{{todo.description}}</div>
+              <div [class.taskType]="todo.type">{{todo.type}}</div>
+            </div>
+          </mat-list-option>
+        </div>
+      </mat-selection-list>
+    </mat-card>
+  </div>
+  <div class="tasksCategory">
+    <h2 class="mat-h2">Other</h2>
+    <mat-card>
+      <mat-selection-list>
+        <div *ngFor="let todo of todos">
+          <mat-list-option *ngIf="todo.category == 'other'" (click)="onSelect(todo)" checkboxPosition="before"
+            [selected]="todo.completed">
+            <div fxLayout="row" fxLayoutAlign="space-between center">
+              <div [class.completed]="todo.completed">{{todo.description}}</div>
+              <div [class.taskType]="todo.type">{{todo.type}}</div>
+            </div>
+          </mat-list-option>
+        </div>
       </mat-selection-list>
     </mat-card>
   </div>

@@ -1,14 +1,18 @@
 import { Todo } from './todo';
 
 export const TODOS: Todo[] = [
-  { id: 11, completed: false, description: "some text", type: "CSS" },
-  { id: 12, completed: false, description: "some text", type: "CSS" },
-  { id: 13, completed: false, description: "some text", type: "CSS" },
-  { id: 14, completed: false, description: "some text", type: "CSS" },
-  { id: 15, completed: false, description: "some text", type: "CSS" },
-  { id: 16, completed: false, description: "some text", type: "CSS" },
-  { id: 17, completed: false, description: "some text", type: "CSS" },
-  { id: 18, completed: false, description: "some text", type: "CSS" },
-  { id: 19, completed: false, description: "some text", type: "CSS" },
-  { id: 20, completed: false, description: "some text", type: "CSS" }
+  {completed: true, description: "Template design on Sketch | Figma | invison", type: "UI/UX", category: "design and development" },
+  {completed: true, description: "Convert design into HTML + CSS template", type: "CSS", category: "design and development" },
+  {completed: true, description: "Make the template resposnive", type: "CSS", category: "design and development" },
+  {completed: false, description: "Make the design compatible as a minimum with IE9", type: "Browsers", category: "design and development" },
+  {completed: true, description: "Use SASS to make colors easy to change (skin-capable / theme-capable )", type: "SASS", category: "design and development" },
+  {completed: true, description: "Build on top of Angular and load data from a data source", type: "TypeScript", category: "design and development" },
+  {completed: true, description: "Use Angular Material", type: "Angular", category: "design and development" },
+  {completed: true, description: "Use Flexbox | Angular Flex-Layout", type: "CSS", category: "design and development" }, 
+  {completed: true, description: "Sidemenu's initial state is open with the ability to close it.", type: "", category: "improvment" },
+  {completed: true, description: "The ability to mark tasks as completed", type: "", category: "improvment" },
+  {completed: false, description: "Ability to rearrange tasks and groups", type: "", category: "improvment" },
+  {completed: true, description: "Compatibility with touch devices", type: "", category: "improvment" },
+  {completed: false, description: "Deliver the final project in a git repository using git-flow", type: "Bash", category: "other" },
+  {completed: true, description: "Add your own touches in the places you see fit with the reason why they are added.", type: "", category: "other" }
 ];

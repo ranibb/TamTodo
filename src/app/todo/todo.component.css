@@ -1,6 +1,12 @@
 .todo-container {
     padding: 16px;
 }
+.tasksCategory:not(:first-child) {
+    margin-top: 32px;
+}
+.tasksCategory:first-child {
+    margin-top: 16px;
+}
 .taskType {
     font-size: 13px;
     background: #E0E0E0;

@@ -87,6 +87,7 @@ $input:         mat-typography-level(inherit, 1.125, 400)
   $foreground: map-get($tamdev, foreground);
   
   .mat-list, .mat-nav-list, .mat-selection-list {
+    padding-top: 0 !important;
     .mat-list-item {
       color: mat-color($tamdev-primary, 200);
       span {
@@ -106,6 +107,10 @@ $input:         mat-typography-level(inherit, 1.125, 400)
     &.active {
       background: mat-color($tamdev-primary, 700);
     }   
+  }
+
+  .tasksCategory h2 {
+    color: mat-color($tamdev-primary, 600);
   }
 }
 @include mat-list-theme($tamdev);
