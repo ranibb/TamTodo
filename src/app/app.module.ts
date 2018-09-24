@@ -6,7 +6,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatCardModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatCardModule, MatSelectModule, MatInputModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { TodoComponent } from './todo/todo.component';
@@ -36,7 +37,10 @@ import { SettingsComponent } from './settings/settings.component';
     MatListModule,
     MatFormFieldModule,
     MatCardModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSelectModule,
+    FormsModule,
+    MatInputModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

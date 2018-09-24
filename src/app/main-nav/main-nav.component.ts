@@ -3,6 +3,7 @@ import { MatSidenav } from "@angular/material";
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
@@ -10,6 +11,8 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./main-nav.component.css']
 })
 export class MainNavComponent {
+
+  selected = 'option1';
 
   @ViewChild('drawer')
   drawer: MatSidenav;
@@ -19,7 +22,7 @@ export class MainNavComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver, private router: Router) {}
 
   onClickClose() {
     this.breakpointObserver

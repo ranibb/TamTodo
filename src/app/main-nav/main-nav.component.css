@@ -25,3 +25,7 @@
 .sidenav-close-button mat-icon {
   font-size: 14px;
 }
+
+.input-clear-button {
+  width: 256px;
+}

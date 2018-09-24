@@ -58,7 +58,7 @@ $body-2:        mat-typography-level(14px, 24px, 500),
 $body-1:        mat-typography-level(14px, 20px, 400),
 $caption:       mat-typography-level(12px, 20px, 400),
 $button:        mat-typography-level(14px, 14px, 500),
-$input:         mat-typography-level(inherit, 1.125, 400)
+$input:         mat-typography-level(inherit, 1.19, 400)
 );
 @include mat-base-typography($tam-typography);
 @include mat-checkbox-typography($tam-typography);
@@ -115,3 +115,63 @@ $input:         mat-typography-level(inherit, 1.125, 400)
   }
 }
 @include mat-list-theme($tamdev);
+
+@mixin mat-form-field-outline-typography($tamdev) {
+  .primaryToolBar {
+    .mat-form-field {
+      margin: 0 4px;
+    }
+    .mat-form-field-appearance-outline {
+      .mat-form-field-wrapper {
+        margin: 0;
+        padding: 0;
+        transform: unset;
+      }
+
+      .mat-select-arrow-wrapper {
+        transform: unset;
+      }
+
+      .mat-form-field-infix {
+        padding: 0.1em 0 0.6em 0;
+      }
+    }
+
+    .mat-form-field-suffix {
+      top: 0.35em !important;
+      left: 0.3em;
+    }
+
+    .mat-form-field {
+      &:not(.mat-form-field-appearance-legacy) {
+        .mat-form-field-suffix {
+          .mat-icon-button {
+            width: 1.5em !important;
+            height: 1.5em !important;
+  
+            .mat-icon {
+              line-height: 1em;
+              width: 1em;
+            }
+          }
+        } 
+      } 
+    }
+  }
+}
+@include mat-form-field-outline-typography($tamdev);
+
+@mixin mat-form-field-outline-theme($tamdev) {
+  .mat-form-field-appearance-outline {
+    .mat-form-field-outline-thick {
+      color: mat-color($tamdev-primary, 700);
+    }
+
+    &.mat-focused {
+      .mat-form-field-outline-thick {
+        color: mat-color($tamdev-primary, 700);
+      }
+    }
+  }
+}
+@include mat-form-field-outline-theme($tamdev);
