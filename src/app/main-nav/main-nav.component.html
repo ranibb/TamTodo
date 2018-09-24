@@ -1,5 +1,5 @@
 <mat-sidenav-container [hasBackdrop]="(isHandset$ | async) ? true : false" class="sidenav-container">
-  <mat-sidenav
+  <mat-sidenav 
     #drawer
     class="sidenav"
     fixedInViewport="true"
@@ -24,7 +24,7 @@
       </div>
 
     </mat-toolbar>
-    <mat-nav-list>
+    <mat-nav-list  (click)="onClickClose()">
       <a mat-list-item routerLink="/home" routerLinkActive="active">
         <mat-icon>home</mat-icon>
         <span>Home</span>
