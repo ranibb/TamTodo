@@ -9,6 +9,11 @@ import { TODOS } from '../mock-todos';
 })
 export class TodoComponent implements OnInit {
 
+  // Filter arguments
+  dDFilter = {category: 'design and development'};
+  improvmentFilter = {category: 'improvment'};
+  otherFilter = {category: 'other'};
+
   todos = TODOS;
   selectedTodo: Todo;
 

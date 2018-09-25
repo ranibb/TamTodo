@@ -3,8 +3,8 @@
     <h2 class="mat-h2">Design & Development</h2>
     <mat-card>
       <mat-selection-list>
-        <div *ngFor="let todo of todos">
-          <mat-list-option *ngIf="todo.category == 'design and development'" (click)="onSelect(todo)" checkboxPosition="before"
+        <div *ngFor="let todo of todos | argsFilter:dDFilter">
+          <mat-list-option (click)="onSelect(todo)" checkboxPosition="before"
             [selected]="todo.completed">
             <div fxLayout="row" fxLayoutAlign="space-between center">
               <div [class.completed]="todo.completed">{{todo.description}}</div>
@@ -19,8 +19,8 @@
     <h2 class="mat-h2">Improvments</h2>
     <mat-card>
       <mat-selection-list>
-        <div *ngFor="let todo of todos">
-          <mat-list-option *ngIf="todo.category == 'improvment'" (click)="onSelect(todo)" checkboxPosition="before"
+        <div *ngFor="let todo of todos | argsFilter:improvmentFilter">
+          <mat-list-option (click)="onSelect(todo)" checkboxPosition="before"
             [selected]="todo.completed">
             <div fxLayout="row" fxLayoutAlign="space-between center">
               <div [class.completed]="todo.completed">{{todo.description}}</div>
@@ -35,8 +35,8 @@
     <h2 class="mat-h2">Other</h2>
     <mat-card>
       <mat-selection-list>
-        <div *ngFor="let todo of todos">
-          <mat-list-option *ngIf="todo.category == 'other'" (click)="onSelect(todo)" checkboxPosition="before"
+        <div *ngFor="let todo of todos | argsFilter:otherFilter">
+          <mat-list-option (click)="onSelect(todo)" checkboxPosition="before"
             [selected]="todo.completed">
             <div fxLayout="row" fxLayoutAlign="space-between center">
               <div [class.completed]="todo.completed">{{todo.description}}</div>

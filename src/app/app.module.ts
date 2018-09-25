@@ -16,6 +16,7 @@ import { PaymentAndBillingComponent } from './payment-and-billing/payment-and-bi
 import { SettingsComponent } from './settings/settings.component';
 import { TodoFilterAndSearchDialogComponent } from './todo-filter-and-search-dialog/todo-filter-and-search-dialog.component';
 import {APP_BASE_HREF} from '@angular/common';
+import { CategoryFilterPipe } from './category-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {APP_BASE_HREF} from '@angular/common';
     MemberComponent,
     PaymentAndBillingComponent,
     SettingsComponent,
-    TodoFilterAndSearchDialogComponent
+    TodoFilterAndSearchDialogComponent,
+    CategoryFilterPipe
   ],
   entryComponents: [
     TodoFilterAndSearchDialogComponent

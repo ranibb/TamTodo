@@ -16,7 +16,8 @@ export const TODOS: Todo[] = [
   {completed: false, description: "Ability to rearrange tasks and groups", type: "", category: "improvment" },
   {completed: true, description: "Compatibility with touch devices", type: "", category: "improvment" },
   {completed: true, description: "Display Filter & serach elements within a dialod for handset devices", type: "", category: "improvment" },
+  {completed: true, description: "Avoid rendering dummy divs with *ngIF after iterating with *ngFor by using a pipe in the *ngFor directive to filter lists based on filter arguments", type: "", category: "improvment" },
   {completed: false, description: "Deliver the final project in a git repository using git-flow", type: "Bash", category: "other" },
   {completed: true, description: "Add your own touches in the places you see fit with the reason why they are added.", type: "", category: "other" },
   {completed: false, description: "Build up a tutorial | dcoumentation for using the App", type: "Github", category: "other" }
-];
+]; 

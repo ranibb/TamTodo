@@ -1,5 +1,5 @@
 .show-case-container {
-    background: url(/assets/images/spacex-549326-unsplash.jpg) no-repeat;
+    background: url(https://raw.githubusercontent.com/ranibb/TamTodo/master/docs/assets/images/spacex-549326-unsplash.jpg) no-repeat;
     background-size: cover;
     background-position: 50% 50%;
     height: calc(100vh - 64px)
