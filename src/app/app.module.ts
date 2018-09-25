@@ -15,6 +15,7 @@ import { MemberComponent } from './member/member.component';
 import { PaymentAndBillingComponent } from './payment-and-billing/payment-and-billing.component';
 import { SettingsComponent } from './settings/settings.component';
 import { TodoFilterAndSearchDialogComponent } from './todo-filter-and-search-dialog/todo-filter-and-search-dialog.component';
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -47,8 +48,9 @@ import { TodoFilterAndSearchDialogComponent } from './todo-filter-and-search-dia
     FormsModule,
     MatInputModule,
     MatDialogModule
+
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
