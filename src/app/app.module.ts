@@ -6,7 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatCardModule, MatSelectModule, MatInputModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatCardModule, MatSelectModule, MatInputModule, MatDialogModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +14,7 @@ import { TodoComponent } from './todo/todo.component';
 import { MemberComponent } from './member/member.component';
 import { PaymentAndBillingComponent } from './payment-and-billing/payment-and-billing.component';
 import { SettingsComponent } from './settings/settings.component';
+import { TodoFilterAndSearchDialogComponent } from './todo-filter-and-search-dialog/todo-filter-and-search-dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,11 @@ import { SettingsComponent } from './settings/settings.component';
     TodoComponent,
     MemberComponent,
     PaymentAndBillingComponent,
-    SettingsComponent
+    SettingsComponent,
+    TodoFilterAndSearchDialogComponent
+  ],
+  entryComponents: [
+    TodoFilterAndSearchDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +45,8 @@ import { SettingsComponent } from './settings/settings.component';
     AppRoutingModule,
     MatSelectModule,
     FormsModule,
-    MatInputModule 
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

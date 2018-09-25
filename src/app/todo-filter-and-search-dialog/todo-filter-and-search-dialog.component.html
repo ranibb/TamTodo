@@ -1,0 +1,26 @@
+<div class="toDoFilterAndSearch">
+
+  <div mat-dialog-content>
+
+    <mat-form-field appearance="outline">
+      <mat-select [(value)]="selected">
+        <mat-option value="option1">All Todos</mat-option>
+        <mat-option value="option2">Completed</mat-option>
+        <mat-option value="option3">In progress</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="input-clear-button" color="primary">
+      <input matInput type="text" placeholder="Search..." [(ngModel)]="value">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+
+  </div>
+
+  <div mat-dialog-actions>
+    <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
+    <button mat-button [mat-dialog-close]="data.name" cdkFocusInitial>Ok</button>
+  </div>
+
+</div>

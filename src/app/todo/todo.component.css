@@ -17,3 +17,9 @@
 .completed {
     text-decoration: line-through;
 }
+
+@media (max-width: 499px) {
+    .mat-list-option {
+        height:90px;
+    }
+}

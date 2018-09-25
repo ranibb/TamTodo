@@ -78,7 +78,7 @@
       </div>
       <!-- show only in small screens & when route path on todo component -->
       <div *ngIf="(isHandset$ | async) && (router.url === '/todo')" class="primaryToolBar-handset">
-        button
+        <button mat-raised-button (click)="openDialog()">Filter & Search</button>
       </div>
     </mat-toolbar>
     <!-- Add Content Here -->

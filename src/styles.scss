@@ -158,6 +158,48 @@ $input:         mat-typography-level(inherit, 1.19, 400)
       } 
     }
   }
+
+  .toDoFilterAndSearch {
+    .mat-form-field {
+      margin: 0 4px;
+    }
+    .mat-form-field-appearance-outline {
+      .mat-form-field-wrapper {
+        // margin: 0;
+        // padding: 0;
+        transform: unset;
+      }
+
+      .mat-select-arrow-wrapper {
+        transform: unset;
+      }
+
+      .mat-form-field-infix {
+        padding: 0.5em 0 1em 0;
+      }
+    }
+
+    .mat-form-field-suffix {
+      top: 0.4em !important;
+      left: 0;
+    }
+
+    .mat-form-field {
+      &:not(.mat-form-field-appearance-legacy) {
+        .mat-form-field-suffix {
+          .mat-icon-button {
+            width: 1.5em !important;
+            height: 1.5em !important;
+  
+            .mat-icon {
+              line-height: 1em;
+              width: 1em;
+            }
+          }
+        } 
+      } 
+    }
+  }
 }
 @include mat-form-field-outline-typography($tamdev);
 
