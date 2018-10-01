@@ -17,6 +17,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { TodoFilterAndSearchDialogComponent } from './todo-filter-and-search-dialog/todo-filter-and-search-dialog.component';
 import {APP_BASE_HREF} from '@angular/common';
 import { CategoryFilterPipe } from './category-filter.pipe';
+import { TodoStatusService } from './shared/todo-status.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { CategoryFilterPipe } from './category-filter.pipe';
     MatDialogModule
 
   ],
-  providers: [{provide: APP_BASE_HREF, useValue : '/' }],
+  providers: [{provide: APP_BASE_HREF, useValue : '/' }, TodoStatusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

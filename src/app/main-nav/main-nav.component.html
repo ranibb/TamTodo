@@ -62,10 +62,10 @@
       <!-- show only in large screens & when route path on todo component -->
       <div *ngIf="!(isHandset$ | async) && (router.url === '/todo')" class="primaryToolBar-notHandset">
         <mat-form-field appearance="outline">
-          <mat-select [(value)]="selected">
-            <mat-option value="option1">All Todos</mat-option>
-            <mat-option value="option2">Completed</mat-option>
-            <mat-option value="option3">In progress</mat-option>
+          <mat-select [(value)]="selected" (selectionChange)=todoFilter(selected)>
+            <mat-option value="All Todos">All Todos</mat-option>
+            <mat-option value="Completed">Completed</mat-option>
+            <mat-option value="In progress">In progress</mat-option>
           </mat-select>
         </mat-form-field>
       

@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import {MatDialog} from '@angular/material';
 import { TodoFilterAndSearchDialogComponent } from '../todo-filter-and-search-dialog/todo-filter-and-search-dialog.component'
+import { TodoStatusService } from '../shared/todo-status.service';
 
 @Component({
   selector: 'app-main-nav',
@@ -16,7 +17,7 @@ export class MainNavComponent {
 
   name: string;
 
-  selected = 'option1';
+  selected = 'All Todos';
 
   @ViewChild('drawer')
   drawer: MatSidenav;
@@ -26,7 +27,16 @@ export class MainNavComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private router: Router, public dialog: MatDialog) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver, 
+    private router: Router, 
+    public dialog: MatDialog,
+    private todoStatusService: TodoStatusService
+    ) {}
+
+  todoFilter(selectedFilter) {
+    this.todoStatusService.todoFilter(selectedFilter)
+  }
 
   onClickClose() {
     this.breakpointObserver

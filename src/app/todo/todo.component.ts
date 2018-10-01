@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Todo } from '../todo';
 import { TODOS } from '../mock-todos';
+import { TodoStatusService } from '../shared/todo-status.service';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
-export class TodoComponent implements OnInit {
+export class TodoComponent implements OnInit, OnDestroy {
 
   // Filter arguments
   dDFilter = {category: 'design and development'};
@@ -17,9 +19,18 @@ export class TodoComponent implements OnInit {
   todos = TODOS;
   selectedTodo: Todo;
 
-  constructor() { }
+  selectedFilter: string;
+
+  private todoFilterSubscription: Subscription;
+
+  constructor(private todoStatusService: TodoStatusService) {}
 
   ngOnInit() {
+    this.selectedFilter = this.todoStatusService.getTodoFilter();
+    this.todoFilterSubscription = this.todoStatusService.todoFilterUpdated.subscribe(() => {
+      this.selectedFilter = this.todoStatusService.getTodoFilter();
+      console.log(this.selectedFilter);
+    });
   }
 
   onSelect(todo: Todo): void {
@@ -31,5 +42,9 @@ export class TodoComponent implements OnInit {
       this.selectedTodo.completed = false;
     }
     console.log(this.selectedTodo);
+  }
+
+  ngOnDestroy() {
+    this.todoFilterSubscription.unsubscribe();
   }
 }
