@@ -70,8 +70,8 @@
         </mat-form-field>
       
         <mat-form-field appearance="outline" class="input-clear-button" color="primary">
-          <input matInput type="text" placeholder="Search..." [(ngModel)]="value">
-          <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <input matInput type="text" placeholder="Search..." [(ngModel)]="searchKey" (input)="onSearchChange(searchKey)">
+          <button mat-button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
             <mat-icon>close</mat-icon>
           </button>
         </mat-form-field>

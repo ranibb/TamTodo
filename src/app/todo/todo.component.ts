@@ -19,34 +19,54 @@ export class TodoComponent implements OnInit, OnDestroy {
   todos = TODOS;
   selectedTodo: Todo;
 
-  selectedFilter: string;
+  fSdata: string[];
 
-  private todoFilterSubscription: Subscription;
+  private fSdataSubscription: Subscription;
 
-  constructor(private todoStatusService: TodoStatusService) {}
+  constructor(private todoStatusService: TodoStatusService) { }
 
   ngOnInit() {
-    this.selectedFilter = this.todoStatusService.getTodoFilter();
-    this.todoFilterSubscription = this.todoStatusService.todoFilterUpdated.subscribe(() => {
-      this.selectedFilter = this.todoStatusService.getTodoFilter();
-      this.todoStatusFilter();
+    this.fSdata = this.todoStatusService.getfSdata();
+    this.fSdataSubscription = this.todoStatusService.fSdataUpdated.subscribe(() => {
+      this.fSdata = this.todoStatusService.getfSdata();
+      this.filterItem();
     });
   }
 
-  todoStatusFilter() {
-    console.log(this.selectedFilter);
-    if (this.selectedFilter == "All Todos") {
-      this.todos = TODOS;
+  filterItem() {
+    console.log(this.fSdata);
 
-    }
-    if (this.selectedFilter == "Completed") {
+    if ((this.fSdata[0] == "All Todos") && (!this.fSdata[1])) {
       this.todos = TODOS;
-      this.todos = this.todos.filter(todo => todo.completed == true)
     }
-    if (this.selectedFilter == "In progress") {
+
+    else if ((this.fSdata[0] == "Completed") && ((this.fSdata[1])  || (!this.fSdata[1]))) {
       this.todos = TODOS;
-      this.todos = this.todos.filter(todo => todo.completed == false)
+      this.todos = this.todos.filter(
+        todo => (
+          (todo.completed == true) && (todo.description.toLocaleLowerCase().indexOf(this.fSdata[1].toLocaleLowerCase()) !== -1)
+        )
+      )
     }
+
+    else if ((this.fSdata[0] == "In progress") && ((this.fSdata[1])  || (!this.fSdata[1]))) {
+      this.todos = TODOS;
+      this.todos = this.todos.filter(
+        todo => (
+          (todo.completed == false) && (todo.description.toLocaleLowerCase().indexOf(this.fSdata[1].toLocaleLowerCase()) !== -1)
+        )
+      )
+    }
+
+    else if (((this.fSdata[1]))) {
+      this.todos = TODOS;
+      this.todos = this.todos.filter(
+        todo => (
+          (todo.description.toLocaleLowerCase().indexOf(this.fSdata[1].toLocaleLowerCase()) !== -1)
+        )
+      )
+    }
+
   }
 
   onSelect(todo: Todo): void {
@@ -61,6 +81,6 @@ export class TodoComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.todoFilterSubscription.unsubscribe();
+    this.fSdataSubscription.unsubscribe();
   }
 }

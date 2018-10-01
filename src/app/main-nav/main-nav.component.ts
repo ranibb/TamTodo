@@ -34,8 +34,26 @@ export class MainNavComponent {
     private todoStatusService: TodoStatusService
     ) {}
 
+    selectedFilter: string = 'All Todos';
+    searchKey: string = '';
+    fSdata = [this.selectedFilter, this.searchKey]
+
   todoFilter(selectedFilter) {
-    this.todoStatusService.todoFilter(selectedFilter)
+    this.selectedFilter = selectedFilter;
+    this.fSdata = [this.selectedFilter, this.searchKey]
+    this.todoStatusService.todofSdata(this.fSdata)
+  }
+  
+  onSearchChange(searchKey) {  
+    this.searchKey = searchKey
+    this.fSdata = [this.selectedFilter, this.searchKey]
+    this.todoStatusService.todofSdata(this.fSdata)
+  }
+
+  clearSearch() {  
+    this.searchKey = '';
+    this.fSdata = [this.selectedFilter, this.searchKey]
+    this.todoStatusService.todofSdata(this.fSdata)
   }
 
   onClickClose() {

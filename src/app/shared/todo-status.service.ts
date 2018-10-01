@@ -7,15 +7,20 @@ import { Subject } from 'rxjs'
 export class TodoStatusService {
 
   private selectedFilter: string;
-  todoFilterUpdated = new Subject();
+  private searchKey: string;
 
-  todoFilter(selectedFilter) {
-    this.selectedFilter = selectedFilter;
-    this.todoFilterUpdated.next();
+  private fSdata = [this.selectedFilter, this.searchKey]
+
+  fSdataUpdated = new Subject();
+
+
+  todofSdata(fSdata) {
+    this.fSdata = fSdata;
+    this.fSdataUpdated.next();
   }
 
-  getTodoFilter() {
-    return this.selectedFilter;
+  getfSdata() {
+    return this.fSdata;
   }
 
   constructor() { }
