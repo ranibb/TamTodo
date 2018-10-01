@@ -29,8 +29,24 @@ export class TodoComponent implements OnInit, OnDestroy {
     this.selectedFilter = this.todoStatusService.getTodoFilter();
     this.todoFilterSubscription = this.todoStatusService.todoFilterUpdated.subscribe(() => {
       this.selectedFilter = this.todoStatusService.getTodoFilter();
-      console.log(this.selectedFilter);
+      this.todoStatusFilter();
     });
+  }
+
+  todoStatusFilter() {
+    console.log(this.selectedFilter);
+    if (this.selectedFilter == "All Todos") {
+      this.todos = TODOS;
+
+    }
+    if (this.selectedFilter == "Completed") {
+      this.todos = TODOS;
+      this.todos = this.todos.filter(todo => todo.completed == true)
+    }
+    if (this.selectedFilter == "In progress") {
+      this.todos = TODOS;
+      this.todos = this.todos.filter(todo => todo.completed == false)
+    }
   }
 
   onSelect(todo: Todo): void {
