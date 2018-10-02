@@ -8,7 +8,7 @@ export const TODOS: Todo[] = [
   {completed: true, description: "Use SASS to make colors easy to change (skin-able / theme-able )", type: "SASS", category: "design and development" },
   {completed: true, description: "Build on top of Angular and load data from a data source", type: "TypeScript", category: "design and development" },
   {completed: true, description: "Use Angular Material", type: "Angular", category: "design and development" },
-  {completed: false, description: "Implement the filter and search functionality", type: "Angular", category: "design and development" },
+  {completed: true, description: "Implement the filter and search functionality in both desktop and mobile", type: "Angular", category: "design and development" },
   {completed: false, description: "Develop a RESTfull APIs for CRUD operations with mongoDB or Firebase", type: "", category: "design and development" },
   {completed: true, description: "Use Flexbox | Angular Flex-Layout", type: "CSS", category: "design and development" }, 
   {completed: true, description: "Sidemenu's initial state is open with the ability to close it.", type: "", category: "improvment" },
@@ -20,4 +20,4 @@ export const TODOS: Todo[] = [
   {completed: false, description: "Deliver the final project in a git repository using git-flow", type: "Bash", category: "other" },
   {completed: true, description: "Add your own touches in the places you see fit with the reason why they are added.", type: "", category: "other" },
   {completed: false, description: "Build up a tutorial | dcoumentation for using the App", type: "Github", category: "other" }
-]; 
+];

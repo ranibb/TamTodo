@@ -3,15 +3,16 @@
   <div mat-dialog-content>
 
     <mat-form-field appearance="outline">
-      <mat-select [(value)]="selected">
-        <mat-option value="option1">All Todos</mat-option>
-        <mat-option value="option2">Completed</mat-option>
-        <mat-option value="option3">In progress</mat-option>
+      <mat-select [(value)]="selected" (selectionChange)=todoFilter(selected)>
+        <mat-option value="All Todos">All Todos</mat-option>
+        <mat-option value="Completed">Completed</mat-option>
+        <mat-option value="In progress">In progress</mat-option>
       </mat-select>
     </mat-form-field>
+  
     <mat-form-field appearance="outline" class="input-clear-button" color="primary">
-      <input matInput type="text" placeholder="Search..." [(ngModel)]="value">
-      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+      <input matInput type="text" placeholder="Search..." [(ngModel)]="searchKey" (input)="onSearchChange(searchKey)">
+      <button mat-button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" (click)="clearSearch()">
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>

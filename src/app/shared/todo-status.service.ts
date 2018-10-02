@@ -6,8 +6,8 @@ import { Subject } from 'rxjs'
 })
 export class TodoStatusService {
 
-  private selectedFilter: string;
-  private searchKey: string;
+  private selectedFilter: string = "All Todos";
+  private searchKey: string = '';
 
   private fSdata = [this.selectedFilter, this.searchKey]
 

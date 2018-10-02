@@ -31,6 +31,7 @@ export class TodoComponent implements OnInit, OnDestroy {
       this.fSdata = this.todoStatusService.getfSdata();
       this.filterItem();
     });
+    this.filterItem();
   }
 
   filterItem() {
