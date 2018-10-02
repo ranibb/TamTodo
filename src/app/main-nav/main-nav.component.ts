@@ -1,7 +1,7 @@
 import { Component, ViewChild, Inject } from '@angular/core';
 import { MatSidenav } from "@angular/material";
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import {MatDialog} from '@angular/material';
@@ -28,29 +28,41 @@ export class MainNavComponent {
     );
 
   constructor(
-    private breakpointObserver: BreakpointObserver, 
-    private router: Router, 
+    private breakpointObserver: BreakpointObserver,
+    private router: Router,
     public dialog: MatDialog,
     private todoStatusService: TodoStatusService
-    ) {}
+  ) { }
 
-    selectedFilter: string = 'All Todos';
-    searchKey: string = '';
-    fSdata = [this.selectedFilter, this.searchKey]
+  selectedFilter: string = 'All Todos';
+  searchKey: string = '';
+  fSdata: string[];
+
+  private fSdataSubscription: Subscription;
+
+  ngOnInit() {
+    this.fSdata = this.todoStatusService.getfSdata();
+    this.fSdataSubscription = this.todoStatusService.fSdataUpdated.subscribe(() => {
+      this.fSdata = this.todoStatusService.getfSdata();
+      this.selected = this.fSdata[0];
+      this.selectedFilter = this.fSdata[0]
+      this.searchKey = this.fSdata[1]
+    });
+  }
 
   todoFilter(selectedFilter) {
     this.selectedFilter = selectedFilter;
     this.fSdata = [this.selectedFilter, this.searchKey]
     this.todoStatusService.todofSdata(this.fSdata)
   }
-  
-  onSearchChange(searchKey) {  
+
+  onSearchChange(searchKey) {
     this.searchKey = searchKey
     this.fSdata = [this.selectedFilter, this.searchKey]
     this.todoStatusService.todofSdata(this.fSdata)
   }
 
-  clearSearch() {  
+  clearSearch() {
     this.searchKey = '';
     this.fSdata = [this.selectedFilter, this.searchKey]
     this.todoStatusService.todofSdata(this.fSdata)
@@ -75,5 +87,9 @@ export class MainNavComponent {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+  
+  ngOnDestroy() {
+    this.fSdataSubscription.unsubscribe();
   }
 }
